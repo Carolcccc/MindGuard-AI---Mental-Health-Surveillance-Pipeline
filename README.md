@@ -1,3 +1,8 @@
+## About the Idea
+Hello all! It was a very cold season when I started building this project. But with full warm in my heart to share the intergrating journey of mine for the past 3 year, this project is coming. 
+Mental health has no doubt to be a core in our life, for those up and down for days, living in a good mental health condition has been pioritized in my life. Instead of a hard core techniques to show, hoping the interacting platform find you a bit of peace or calm. You are always being the best version of you. Have a wonderful day.  
+
+
 ## 🎯 Project Goals
 
 - **Real-time Detection**: Identify suicide ideation and emotional distress from Reddit posts
@@ -320,6 +325,7 @@ Before deployment:
 - **Transformers**: Hugging Face NLP library
 - **RoBERTa**: Facebook's improved BERT model
 - Reddit community for rich mental health discussions
+- PLEASE REACH OUT TO PROFESSIONAL IF YOU NEED ANY ASSISTANT.
 
 ---
 
