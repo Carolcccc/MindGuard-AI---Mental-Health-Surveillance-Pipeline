@@ -1,7 +1,3 @@
-# MindGuard AI - Mental Health Surveillance Pipeline
-
-A production-ready ML pipeline for real-time behavioral analysis of mental health discussions on Reddit. Combines RoBERTa-CNN architecture with privacy-first design and compliance governance.
-
 ## 🎯 Project Goals
 
 - **Real-time Detection**: Identify suicide ideation and emotional distress from Reddit posts
@@ -58,8 +54,6 @@ MindGuard AI Pipeline:
 ---
 
 ## 🚀 Complete Workflow: From Data to Insights
-
-**⚡ Quick Start (5 minutes):** See [QUICKSTART.md](QUICKSTART.md)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -282,120 +276,6 @@ for post in posts:
 ```
 
 ---
-
-## 📈 Performance Metrics
-
-Example output after running scraper:
-
-```
-============================================================
-✅ Data Collection Complete
-============================================================
-📊 Statistics:
-   Total posts processed: 2,847
-   Valid posts saved:     2,125
-   Posts filtered out:      722
-   Errors encountered:        0
-
-📁 Data saved to: medical_raw_data_20240325_103045.csv
-============================================================
-```
-
-**Deduplication Results:**
-- Initial collected: 2,125 posts
-- Duplicates removed: 89
-- Final unique: 2,036 posts
-
----
-
-## 🧹 Text Cleaning Examples
-
-### Before & After
-
-| Raw Reddit Post | Cleaned Medical Text |
-|---|---|
-| "I'm feeling really bad lately 😭😭😭 check out my blog http://example.com" | "I'm feeling really bad lately 😭😭 check out my blog" |
-| "u/SomeUser posted in r/depression about this..." | "posted in about this..." |
-| "[deleted]" | "" (filtered out) |
-| "help i just want to die" | "help i just want to die" (preserved despite short) |
-
-**Key Features:**
-- ✅ Preserves first-person pronouns (I, me, my)
-- ✅ Keeps emotional punctuation (!, ?)
-- ✅ Removes URLs and Reddit mentions
-- ✅ Normalizes whitespace
-- ✅ Respects sentence structure
-
----
-
-## 🧪 Testing
-
-```bash
-# Run all tests with coverage
-pytest --cov=. -v
-
-# Run specific test file
-pytest tests/test_cleaner.py -v
-
-# Run with detailed output
-pytest -vv --tb=long
-```
-
-**Test Coverage:**
-- ✓ Text cleaning (10+ edge cases)
-- ✓ Data anonymization
-- ✓ API error handling
-- ✓ Rate limiting logic
-- ✓ Quality validation
-
----
-
-## 📚 API Documentation
-
-### Config Module
-
-```python
-from config import load_config
-
-reddit_config, data_config, security_config = load_config()
-
-# Access configuration
-print(reddit_config.client_id)
-print(data_config.target_subreddits)
-print(security_config.enable_encryption)
-```
-
-### Cleaner Module
-
-```python
-from cleaner import MedicalTextCleaner, DataAnonymizer
-
-# Clean text
-cleaned = MedicalTextCleaner.clean(raw_text)
-
-# Get word count
-words = MedicalTextCleaner.get_word_count(cleaned)
-
-# Anonymize
-anonymous = DataAnonymizer.anonymize_post(post_dict)
-```
-
-### Scraper Module
-
-```python
-from scrape_medical_data import MedicalRedditScraper
-
-scraper = MedicalRedditScraper(reddit, data_config, security_config)
-
-# Scrape single subreddit
-df = scraper.scrape_subreddit("mentalhealth")
-
-# Scrape multiple subreddits
-df_all = scraper.scrape_multiple_subreddits()
-```
-
----
-
 ## ⚖️ Compliance & Ethics
 
 ### GDPR Compliance
@@ -418,50 +298,6 @@ df_all = scraper.scrape_multiple_subreddits()
 
 ---
 
-## 🔧 Troubleshooting
-
-### Issue: "Invalid authorization code"
-```bash
-# Solution: 
-# 1. Verify redirect URI matches in .env and Reddit app settings
-# 2. Code expires quickly - don't delay entering it
-# 3. Run get_refresh_token.py again
-```
-
-### Issue: Rate limit warnings
-```bash
-# Solution:
-# 1. Already implemented with exponential backoff
-# 2. If still hitting limits, increase MIN_WORD_COUNT to skip more posts
-# 3. Reduce POSTS_PER_SUBREDDIT
-```
-
-### Issue: Memory error with large datasets
-```bash
-# Solution:
-# 1. Process in smaller batches using BATCH_SIZE
-# 2. Use chunked CSV writing for large files
-# 3. Implement database storage instead of CSV
-```
-
----
-
-## 📞 Support & Contribution
-
-### Getting Help
-- 📖 Check [CODE_REVIEW.md](CODE_REVIEW.md) for detailed analysis
-- 🐛 Report bugs with full error logs
-- 💡 Suggest improvements via pull requests
-
-### Contributing
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open Pull Request
-
----
-
 ## 📋 Compliance Checklist
 
 Before deployment:
@@ -477,13 +313,6 @@ Before deployment:
 - [ ] Testing: Full test coverage >80%
 - [ ] Monitoring: Structured logging validated
 
----
-
-## 📄 License
-
-[Your License Here]
-
----
 
 ## 🙏 Acknowledgments
 
@@ -495,5 +324,5 @@ Before deployment:
 ---
 
 **Last Updated**: March 25, 2024  
-**Status**: Production-Ready  
+**Status**: Just started
 **Version**: 1.0.0
