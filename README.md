@@ -329,6 +329,6 @@ Before deployment:
 
 ---
 
-**Last Updated**: March 25, 2024  
-**Status**: Data vilidation onging
+**Last Updated**: March 27, 2024  
+**Status**: Reddit/Token access testing
 **Version**: 1.0.0
