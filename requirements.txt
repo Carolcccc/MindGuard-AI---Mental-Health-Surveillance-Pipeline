@@ -1,6 +1,3 @@
-# MindGuard AI - Requirements
-# Production dependencies for the mental health ML pipeline
-
 # Core Data Processing
 pandas==2.1.3
 numpy==1.24.3
