@@ -1,7 +1,3 @@
-"""
-Enhanced OAuth token management with security improvements.
-"""
-
 import praw
 import webbrowser
 from typing import Optional
